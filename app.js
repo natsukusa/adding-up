@@ -30,6 +30,9 @@ rl.on('line', (lineString) => {
 });
 
 rl.on('close', () => {
+    for (let [key, value] of prefectureDataMap){
+        value.change = value.popu15 / value.popu10;
+    }
     console.log(prefectureDataMap);
 });
 
